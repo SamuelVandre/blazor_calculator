@@ -1,0 +1,69 @@
+﻿@page "/Calc"
+@using System.ComponentModel.DataAnnotations
+<h3>Calculadora</h3>
+<EditForm action="/" Model="@valores" OnValidSubmit="@FormEnvio">
+    @*<DataAnnotationsValidator />
+    <ValidationSummary />*@
+    <InputNumber placeholder="Valor 1" TValue="double" id="numberInput" @bind-Value="@valores.V1" />
+    <select @bind="valores.Operacao" class="form-check form-control w-25">
+        <option value="Soma">+</option>
+        <option value="Sub">-</option>
+        <option value="Divisao">/</option>
+        <option value="Multi">x</option>
+    </select>
+    <InputNumber placeholder="Valor 2" TValue="double" id="numberInput" @bind-Value="@valores.V2" />
+    <button class="btn btn-primary" type="submit"><title>Botao</title>Calcular</button>
+</EditForm>
+    <p>@Message</p>
+
+
+
+@code {
+    private Valores valores = new Valores();
+    public string Message { get; set; } = string.Empty;
+
+    public void FormEnvio()
+    {
+        Resultado(valores.V1, valores.V2, valores.Operacao);
+    }
+
+    public string Resultado(double v1, double v2, string op)
+    {
+        double resultado;
+        switch (op)
+        {
+            case "Soma":
+                resultado = v1 + v2;
+                break;
+            case "Sub":
+                resultado = v1 - v2;
+                break;
+
+            case "Divisao":
+                resultado = v1 / v2;
+                break;
+
+            case "Multi":
+                resultado = v1 * v2;    
+                break;
+
+            default:
+                Message = "Valores invalidos";
+                resultado = 000.00;
+                Message = "Operação inválida";
+                break;
+        }
+        Message = "Seu resultado é: " + resultado;
+        Console.Clear();
+        Console.WriteLine("V1: " + v1 + "\nV2: " + v2 + "\nOp: " + op);
+        Console.WriteLine(Message);
+        return resultado.ToString();
+    }
+
+    public class Valores
+    {
+        public double V1 { get; set; }
+        public double V2 { get; set; }
+        public string Operacao { get; set; } = string.Empty;
+    }
+}
