@@ -1029,3 +1029,4 @@ C:\Users\samuc\source\repos\Calculadora_Simples\obj\Debug\net8.0\Calculadora_Sim
 C:\Users\samuc\source\repos\Calculadora_Simples\obj\Debug\net8.0\refint\Calculadora_Simples.dll
 C:\Users\samuc\source\repos\Calculadora_Simples\obj\Debug\net8.0\Calculadora_Simples.pdb
 C:\Users\samuc\source\repos\Calculadora_Simples\obj\Debug\net8.0\ref\Calculadora_Simples.dll
+C:\Users\samuc\source\repos\Calculadora_Simples\obj\Debug\net8.0\Calculadora_Simples.sourcelink.json
