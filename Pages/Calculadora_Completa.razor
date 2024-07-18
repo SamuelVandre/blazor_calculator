@@ -1,0 +1,140 @@
+﻿@page "/Calc_Completa"
+@using System.ComponentModel.DataAnnotations
+<h3>Calculadora</h3>
+
+<EditForm class="w-25" Model="@valores" OnValidSubmit="@FormEnvio">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <InputNumber class="w-100" placeholder="Valor 1" TValue="double" id="numberInput" @bind-Value="@valores.V1" />
+    <select @bind="valores.Operacao" class="form-check form-control w-100">
+        <option disabled value="" selected>Operação</option>
+        <option value="Soma">+</option>
+        <option value="Sub">-</option>
+        <option value="Divisao">÷</option>
+        <option value="Multi">x</option>
+        <option value="Raiz">√</option>
+        <option value="Potencia">^</option>
+    </select>
+    <InputNumber class="w-100" placeholder="Valor 2" TValue="double" id="numberInput" @bind-Value="@valores.V2" />
+    <button class="btn btn-primary" type="submit">Calcular</button>
+</EditForm>
+
+@if (valores.Acesso)
+{
+    <p>Selecione o que fazer com o resultado</p>
+    <EditForm Model="@valoresPos" OnValidSubmit="@FormPosResultado">
+        <InputNumber @bind-Value="valoresPos.Vl_PosResultado" class="w-100" placeholder="Valor para operação adicional" />
+        <select @bind="valoresPos.Operacao" class="form-check form-control w-100">
+            <option disabled value="" selected>Operação</option>
+            <option value="Soma">+</option>
+            <option value="Sub">-</option>
+            <option value="Divisao">÷</option>
+            <option value="Multi">x</option>
+            <option value="Raiz">√</option>
+            <option value="Potencia">^</option>
+        </select>
+        <button type="submit" class="btn btn-secondary">Calcular</button>
+    </EditForm>
+    <p>@Message</p>
+}
+
+<script>
+    alert("Em caso de raiz, o primeiro numero é o índice e o segundo é o radicando");
+</script>
+
+@code {
+    private Valores valores = new();
+    private ValoresPos valoresPos = new();
+    public string Message { get; set; } = string.Empty;
+
+    public void FormEnvio()
+    {
+        Resultado(valores.V1, valores.V2, valores.Operacao);
+        valores.Acesso = true;
+    }
+
+    public void FormPosResultado()
+    {
+        Form_Pos_Resultado(valoresPos.Vl_PosResultado, valores.ResultadoAtual, valoresPos.Operacao);
+    }
+
+    public void Form_Pos_Resultado(double v1, double resultAtual, string op)
+    {
+        switch (op)
+        {
+            case "Soma":
+                valores.ResultadoAtual += v1;
+                break;
+            case "Sub":
+                valores.ResultadoAtual -= v1;
+                break;
+            case "Divisao":
+                valores.ResultadoAtual /= v1;
+                break;
+            case "Multi":
+                valores.ResultadoAtual *= v1;
+                break;
+            case "Raiz":
+                valores.ResultadoAtual = Math.Exp(Math.Log(resultAtual) / v1);
+                break;
+            case "Potencia":
+                valores.ResultadoAtual = Math.Pow(resultAtual, v1);
+                break;
+            default:
+                valores.ResultadoAtual = 0.0;
+                Message = "Operação inválida";
+                break;
+        }
+        Message = "Resultado: " + valores.ResultadoAtual.ToString("F6");
+        valores.AcessoPos = false;
+    }
+
+    public void Resultado(double v1, double v2, string op)
+    {
+        double resultado = 0;
+        switch (op)
+        {
+            case "Soma":
+                resultado = v1 + v2;
+                break;
+            case "Sub":
+                resultado = v1 - v2;
+                break;
+            case "Divisao":
+                resultado = v1 / v2;
+                break;
+            case "Multi":
+                resultado = v1 * v2;
+                break;
+            case "Raiz":
+                resultado = Math.Exp(Math.Log(v2) / v1);
+                break;
+            case "Potencia":
+                resultado = Math.Pow(v1, v2);
+                break;
+            default:
+                resultado = 0.0;
+                Message = "Operação inválida";
+                break;
+        }
+        valores.ResultadoAtual = resultado;
+        valores.Acesso = true;
+        Message = "Seu resultado é: " + resultado.ToString("F6");
+    }
+
+    public class Valores
+    {
+        public double V1 { get; set; }
+        public double V2 { get; set; }
+        public string Operacao { get; set; } = string.Empty;
+        public bool Acesso { get; set; } = false;
+        public double ResultadoAtual { get; set; }
+        public bool AcessoPos { get; set; } = false;
+    }
+
+    public class ValoresPos
+    {
+        public double Vl_PosResultado { get; set; }
+        public string Operacao { get; set; } = string.Empty;
+    }
+}

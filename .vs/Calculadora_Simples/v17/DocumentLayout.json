@@ -3,14 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\samuc\\source\\repos\\Calculadora_Simples\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E0B0209B-649B-4DA0-97FF-F0521EAC8885}|Calculadora_Simples.csproj|c:\\users\\samuc\\source\\repos\\calculadora_simples\\pages\\calc.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E0B0209B-649B-4DA0-97FF-F0521EAC8885}|Calculadora_Simples.csproj|solutionrelative:pages\\calc.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E0B0209B-649B-4DA0-97FF-F0521EAC8885}|Calculadora_Simples.csproj|c:\\users\\samuc\\source\\repos\\calculadora_simples\\pages\\calculadora_completa.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E0B0209B-649B-4DA0-97FF-F0521EAC8885}|Calculadora_Simples.csproj|solutionrelative:pages\\calculadora_completa.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0B0209B-649B-4DA0-97FF-F0521EAC8885}|Calculadora_Simples.csproj|c:\\users\\samuc\\source\\repos\\calculadora_simples\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E0B0209B-649B-4DA0-97FF-F0521EAC8885}|Calculadora_Simples.csproj|solutionrelative:layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E0B0209B-649B-4DA0-97FF-F0521EAC8885}|Calculadora_Simples.csproj|c:\\users\\samuc\\source\\repos\\calculadora_simples\\pages\\calc_simples.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E0B0209B-649B-4DA0-97FF-F0521EAC8885}|Calculadora_Simples.csproj|solutionrelative:pages\\calc_simples.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 256,
+      "VerticalTabListWidth": 100,
       "DocumentGroups": [
         {
           "DockedWidth": 200,
@@ -19,15 +27,39 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Calc.razor",
-              "DocumentMoniker": "C:\\Users\\samuc\\source\\repos\\Calculadora_Simples\\Pages\\Calc.razor",
-              "RelativeDocumentMoniker": "Pages\\Calc.razor",
-              "ToolTip": "C:\\Users\\samuc\\source\\repos\\Calculadora_Simples\\Pages\\Calc.razor",
-              "RelativeToolTip": "Pages\\Calc.razor",
-              "ViewState": "AQIAADIAAAAAAAAAAAAkwEYAAAAAAAAA",
+              "Title": "Calculadora_Completa.razor",
+              "DocumentMoniker": "C:\\Users\\samuc\\source\\repos\\Calculadora_Simples\\Pages\\Calculadora_Completa.razor",
+              "RelativeDocumentMoniker": "Pages\\Calculadora_Completa.razor",
+              "ToolTip": "C:\\Users\\samuc\\source\\repos\\Calculadora_Simples\\Pages\\Calculadora_Completa.razor",
+              "RelativeToolTip": "Pages\\Calculadora_Completa.razor",
+              "ViewState": "AQIAAC8AAAAAAAAAAAArwD0AAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-16T16:54:55.128Z",
+              "WhenOpened": "2024-07-18T21:30:58.146Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Users\\samuc\\source\\repos\\Calculadora_Simples\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "Layout\\NavMenu.razor",
+              "ToolTip": "C:\\Users\\samuc\\source\\repos\\Calculadora_Simples\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "Layout\\NavMenu.razor",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAkwCQAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-18T21:24:32.118Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Calc_Simples.razor",
+              "DocumentMoniker": "C:\\Users\\samuc\\source\\repos\\Calculadora_Simples\\Pages\\Calc_Simples.razor",
+              "RelativeDocumentMoniker": "Pages\\Calc_Simples.razor",
+              "ToolTip": "C:\\Users\\samuc\\source\\repos\\Calculadora_Simples\\Pages\\Calc_Simples.razor",
+              "RelativeToolTip": "Pages\\Calc_Simples.razor",
+              "ViewState": "AQIAADsAAAAAAAAAAAAkwFMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-16T16:54:55.128Z"
             }
           ]
         }
